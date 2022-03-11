@@ -11,16 +11,12 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var txtRed: UITextField!
-    
     @IBOutlet weak var txtGreen: UITextField!
-    
     @IBOutlet weak var txtBlue: UITextField!
-    
     @IBOutlet weak var lblResult: UILabel!
-    
     @IBOutlet weak var btnConvert: UIButton!
-    
     @IBOutlet weak var lblSelectedColor: UILabel!
+    var secilenIndex : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +25,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        secilenIndex = sender.selectedSegmentIndex
+        lblResult.text?.removeAll()
+        txtRed.text?.removeAll()
+        txtGreen.text?.removeAll()
+        txtBlue.text?.removeAll()
+        lblSelectedColor.backgroundColor = UIColor.white
+        
+        if secilenIndex == 0 {
+            
+            btnConvert.setTitle("RGB - HEX Convert", for: UIControl.State.normal)
+        }else{
+            btnConvert.setTitle("HEX - RGB Convert", for: UIControl.State.normal)
+        }
     }
     
     
