@@ -42,7 +42,46 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnConvertClicked(_ sender: UIButton) {
+        
+        
+        if secilenIndex == 0 {
+            //RGB'den HEX'e çeviri yapılacak
+            convertRGBtoHEX()
+            
+        }else{
+            // HEX'den RGB'ye çeviri yapılacaktır.
+            convertHEXtoRGB()
+            
+        }
+    }
+    func convertRGBtoHEX(){
+        
+        if let redValue = UInt8(txtRed.text!){
+            
+            if let greenValue = UInt8(txtGreen.text!){
+                
+                if let blueValue = UInt8(txtBlue.text!){
+                    
+                    //Success!
+                    
+                    
+                    let redHex = String(format: "%2X", redValue)
+                    let greenHex = String(format: "%2X", greenValue)
+                    let blueHex = String(format: "%2X", blueValue)
+                    
+                    lblResult.text = "HEX Color : #\(redHex)\(greenHex)\(blueHex)"
+                    lblSelectedColor.backgroundColor = UIColor(red: CGFloat(redValue)/255, green: CGFloat(greenValue)/255, blue: CGFloat(blueValue)/255, alpha: 1)
+                }
+            }
+        }
+        
+        
     }
     
+    func convertHEXtoRGB(){
+        
+        
+        
+    }
 }
 
