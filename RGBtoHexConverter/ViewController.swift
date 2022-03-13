@@ -82,7 +82,7 @@ class ViewController: UIViewController {
             if let greenValue = UInt8(txtGreen.text!, radix: 16){
                 if let blueValue = UInt8(txtBlue.text!, radix: 16) {
                     
-                    printContent("RED : \(redValue) \n GREEN : \(greenValue) \n BLUE : \(blueValue)")
+                   // print("RED : \(redValue) \n GREEN : \(greenValue) \n BLUE : \(blueValue)")
                     lblResult.text = "RED : \(redValue) \n GREEN : \(greenValue) \n BLUE : \(blueValue)"
                     lblSelectedColor.backgroundColor = UIColor(red: CGFloat(redValue)/255, green: CGFloat(greenValue)/255, blue: CGFloat(blueValue)/255, alpha: 1)
                 }
@@ -91,3 +91,7 @@ class ViewController: UIViewController {
 }
 
 }
+
+
+
+
